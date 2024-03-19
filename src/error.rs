@@ -5,7 +5,9 @@ pub type Result<T> = core::result::Result<T, Error>;
 #[derive(Debug)]
 pub enum Error {
     LoginFail,
-    TicketDeleteFailIdNotFound {id: u64}
+    TicketDeleteFailIdNotFound {id: u64},
+    AuthFailNoAuthToken,
+    AuthFailWrongTokenFormat
 }
 
 impl core::fmt::Display for Error {
